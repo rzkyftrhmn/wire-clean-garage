@@ -17,6 +17,15 @@
       <div class="container px-4">
         <img src="/images/cwg.png" alt="Logo">
 
+        <div class="mobile-navbar-actions">
+          <a href="https://wa.me/6287725316510"
+            target="_blank"
+            rel="noopener"
+            class="btn-book mobile-book">
+              BOOK NOW &#8599;
+          </a>
+        </div>
+
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#top-navbar">
           <i class="lni lni-align-text-right"></i>
         </button>
@@ -39,13 +48,13 @@
                   <li class="nav-item"><a class="nav-link" href="#why-cwg">Why Choose CWG</a></li>
                   <li class="nav-item"><a class="nav-link" href="#pricelist">Pricelist</a></li>
                   <li class="nav-item"><a class="nav-link" href="#faq">Faq</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                  <li class="nav-item"><a class="nav-link" href="https://wa.me/6287725316510" target="_blank" rel="noopener">Contact</a></li>
               </ul>
               <a href="https://wa.me/6287725316510"
                 target="_blank"
                 rel="noopener"
                 class="btn-book desktop-book">
-                  BOOK NOW ↗
+                  BOOK NOW &#8599;
               </a>
           </div>
         </div>
@@ -93,14 +102,6 @@
                         <div>
                             <span class="stat-num">HOME</span>
                             <span class="stat-label">SERVICE</span>
-                        </div>
-                    </div>
-                    <div class="hero-divider"></div>
-                    <div class="hero-stat">
-                        <img class="stat-icon" src="images/lightning.png" alt="">
-                        <div>
-                            <span class="stat-num">KABEL</span>
-                            <span class="stat-label">RAPIH</span>
                         </div>
                     </div>
                 </div>
@@ -278,170 +279,23 @@
             </button>
             <div class="price-accordion-panel">
               <div class="price-accordion-content">
-                <div class="price-tabs" role="tablist" aria-label="Kategori brand motor wiretuck">
-                  <button class="price-tab" type="button" role="tab" aria-selected="false" aria-controls="wiretuck-honda">Honda</button>
-                  <button class="price-tab" type="button" role="tab" aria-selected="false" aria-controls="wiretuck-yamaha">Yamaha</button>
-                  <button class="price-tab" type="button" role="tab" aria-selected="false" aria-controls="wiretuck-vespa">Vespa</button>
-                  <button class="price-tab" type="button" role="tab" aria-selected="false" aria-controls="wiretuck-kawasaki">Kawasaki</button>
-                  <button class="price-tab" type="button" role="tab" aria-selected="false" aria-controls="wiretuck-suzuki">Suzuki</button>
-                  <button class="price-tab" type="button" role="tab" aria-selected="false" aria-controls="wiretuck-lainnya">2 Tak / Lainnya</button>
-                </div>
-
-                <div class="price-tab-panels">
-                  <article class="price-tab-panel" id="wiretuck-honda" role="tabpanel">
-                    <div class="price-brand-card">
-                      <div class="price-brand-head"><span>Brand</span><h3>Honda</h3></div>
-                      <div class="price-columns-wrap"><div class="price-columns">
-                        <div class="price-column"><h4>Wiretuck Mesin</h4>
-                          <div class="price-detail"><h3>Beat / Genio</h3><strong>Rp80.000</strong></div>
-                          <div class="price-detail"><h3>Scoopy</h3><strong>Rp100.000</strong></div>
-                          <div class="price-detail"><h3>Vario 125-160</h3><strong>Rp100.000</strong></div>
-                          <div class="price-detail"><h3>Stylo 160</h3><strong>Rp130.000</strong></div>
-                          <div class="price-detail"><h3>PCX 150-160</h3><strong>Rp200.000</strong></div>
-                          <div class="price-detail"><h3>ADV 150-160</h3><strong>Rp200.000</strong></div>
-                          <div class="price-detail"><h3>CRF 150</h3><strong>Rp100.000</strong></div>
-                          <div class="price-detail"><h3>CRF250</h3><strong>Rp150.000</strong></div>
-                          <div class="price-detail"><h3>CBR150</h3><strong>Rp100.000</strong></div>
-                          <div class="price-detail"><h3>CBR250</h3><strong>Rp150.000</strong></div>
-                          <div class="price-detail"><h3>Sonic 150R</h3><strong>Rp100.000</strong></div>
-                        </div>
-                        <div class="price-column"><h4>Rapihin Full Body</h4>
-                          <div class="price-detail"><h3>Beat / Genio</h3><strong>Rp350.000</strong></div>
-                          <div class="price-detail"><h3>Scoopy</h3><strong>Rp350.000</strong></div>
-                          <div class="price-detail"><h3>Vario 125-160</h3><strong>Rp400.000</strong></div>
-                          <div class="price-detail"><h3>Stylo 160</h3><strong>Rp450.000</strong></div>
-                          <div class="price-detail"><h3>PCX 150-160</h3><strong>Rp500.000</strong></div>
-                          <div class="price-detail"><h3>ADV 150-160</h3><strong>Rp500.000</strong></div>
-                          <div class="price-detail"><h3>CRF150</h3><strong>Rp400.000</strong></div>
-                          <div class="price-detail"><h3>CRF250</h3><strong>Rp550.000</strong></div>
-                          <div class="price-detail"><h3>CBR150</h3><strong>Rp500.000</strong></div>
-                          <div class="price-detail"><h3>CBR250</h3><strong>Rp700.000</strong></div>
-                          <div class="price-detail"><h3>Sonic 150R</h3><strong>Rp500.000</strong></div>
-                        </div>
-                      </div></div>
+                <div class="wiretuck-picker" data-wiretuck>
+                  <div class="wiretuck-step">
+                    <div>
+                      <p data-wire-step-label>Pilih Brand</p>
                     </div>
-                  </article>
+                    <button class="wiretuck-back" type="button" data-wire-back aria-label="Kembali" hidden>
+                      <span aria-hidden="true">&#8592;</span>
+                    </button>
+                  </div>
 
-                  <article class="price-tab-panel" id="wiretuck-yamaha" role="tabpanel">
-                    <div class="price-brand-card">
-                      <div class="price-brand-head"><span>Brand</span><h3>Yamaha</h3></div>
-                      <div class="price-columns-wrap"><div class="price-columns">
-                        <div class="price-column"><h4>Wiretuck Mesin</h4>
-                          <div class="price-detail"><h3>Mio Series</h3><strong>Rp80.000</strong></div>
-                          <div class="price-detail"><h3>Fazzio / Gear / FreeGo</h3><strong>Rp100.000</strong></div>
-                          <div class="price-detail"><h3>Lexi</h3><strong>Rp100.000</strong></div>
-                          <div class="price-detail"><h3>Aerox 155 Old/New</h3><strong>Rp100.000</strong></div>
-                          <div class="price-detail"><h3>Aerox Alpha/Turbo</h3><strong>Rp130.000</strong></div>
-                          <div class="price-detail"><h3>NMAX 155 Old/New</h3><strong>Rp100.000</strong></div>
-                          <div class="price-detail"><h3>NMAX Neo/Turbo</h3><strong>Rp130.000</strong></div>
-                          <div class="price-detail"><h3>XMAX</h3><strong>Rp270.000</strong></div>
-                          <div class="price-detail"><h3>WR155</h3><strong>Rp120.000</strong></div>
-                          <div class="price-detail"><h3>R15 V1/V2/V3</h3><strong>Rp120.000</strong></div>
-                          <div class="price-detail"><h3>R25</h3><strong>Rp150.000</strong></div>
-                          <div class="price-detail"><h3>MT15</h3><strong>Rp120.000</strong></div>
-                          <div class="price-detail"><h3>XSR155</h3><strong>Rp120.000</strong></div>
-                          <div class="price-detail"><h3>MX King</h3><strong>Rp100.000</strong></div>
-                        </div>
-                        <div class="price-column"><h4>Rapihin Full Body</h4>
-                          <div class="price-detail"><h3>Mio Series</h3><strong>Rp350.000</strong></div>
-                          <div class="price-detail"><h3>Fazzio / Gear / FreeGo</h3><strong>Rp350.000</strong></div>
-                          <div class="price-detail"><h3>Lexi</h3><strong>Rp400.000</strong></div>
-                          <div class="price-detail"><h3>Aerox 155 Old/New</h3><strong>Rp450.000</strong></div>
-                          <div class="price-detail"><h3>Aerox Alpha / Turbo</h3><strong>Rp500.000</strong></div>
-                          <div class="price-detail"><h3>NMAX 155 Old/New</h3><strong>Rp450.000</strong></div>
-                          <div class="price-detail"><h3>NMAX Neo / Turbo</h3><strong>Rp500.000</strong></div>
-                          <div class="price-detail"><h3>XMAX</h3><strong>Rp700.000</strong></div>
-                          <div class="price-detail"><h3>WR155</h3><strong>Rp450.000</strong></div>
-                          <div class="price-detail"><h3>R15 V1/V2/V3</h3><strong>Rp500.000</strong></div>
-                          <div class="price-detail"><h3>R25</h3><strong>Rp700.000</strong></div>
-                          <div class="price-detail"><h3>MT15</h3><strong>Rp600.000</strong></div>
-                          <div class="price-detail"><h3>XSR155</h3><strong>Rp600.000</strong></div>
-                          <div class="price-detail"><h3>MX King</h3><strong>Rp500.000</strong></div>
-                        </div>
-                      </div></div>
-                    </div>
-                  </article>
-
-                  <article class="price-tab-panel" id="wiretuck-vespa" role="tabpanel">
-                    <div class="price-brand-card">
-                      <div class="price-brand-head"><span>Brand</span><h3>Vespa</h3></div>
-                      <div class="price-columns-wrap"><div class="price-columns">
-                        <div class="price-column"><h4>Wiretuck Mesin</h4>
-                          <div class="price-detail"><h3>LX / S / Primavera</h3><strong>Rp150.000</strong></div>
-                          <div class="price-detail"><h3>Sprint</h3><strong>Rp150.000</strong></div>
-                          <div class="price-detail"><h3>GTS Series</h3><strong>Rp200.000</strong></div>
-                        </div>
-                        <div class="price-column"><h4>Rapihin Full Body</h4>
-                          <div class="price-detail"><h3>LX / S / Primavera</h3><strong>Rp550.000</strong></div>
-                          <div class="price-detail"><h3>Sprint</h3><strong>Rp600.000</strong></div>
-                          <div class="price-detail"><h3>GTS Series</h3><strong>Rp800.000</strong></div>
-                        </div>
-                      </div></div>
-                    </div>
-                  </article>
-
-                  <article class="price-tab-panel" id="wiretuck-kawasaki" role="tabpanel">
-                    <div class="price-brand-card">
-                      <div class="price-brand-head"><span>Brand</span><h3>Kawasaki</h3></div>
-                      <div class="price-columns-wrap"><div class="price-columns">
-                        <div class="price-column"><h4>Wiretuck Mesin</h4>
-                          <div class="price-detail"><h3>KLX 150</h3><strong>Rp100.000</strong></div>
-                          <div class="price-detail"><h3>KLX230</h3><strong>Rp150.000</strong></div>
-                          <div class="price-detail"><h3>ZX25R</h3><strong>Rp250.000</strong></div>
-                          <div class="price-detail"><h3>Ninja SS / R / RR</h3><strong>Rp200.000</strong></div>
-                        </div>
-                        <div class="price-column"><h4>Rapihin Full Body</h4>
-                          <div class="price-detail"><h3>KLX150</h3><strong>Rp400.000</strong></div>
-                          <div class="price-detail"><h3>KLX230</h3><strong>Rp550.000</strong></div>
-                          <div class="price-detail"><h3>ZX25R</h3><strong>Rp900.000</strong></div>
-                          <div class="price-detail"><h3>Ninja SS / R / RR</h3><strong>Rp700.000</strong></div>
-                        </div>
-                      </div></div>
-                    </div>
-                  </article>
-
-                  <article class="price-tab-panel" id="wiretuck-suzuki" role="tabpanel">
-                    <div class="price-brand-card">
-                      <div class="price-brand-head"><span>Brand</span><h3>Suzuki</h3></div>
-                      <div class="price-columns-wrap"><div class="price-columns">
-                        <div class="price-column"><h4>Wiretuck Mesin</h4>
-                          <div class="price-detail"><h3>GSX R150</h3><strong>Rp100.000</strong></div>
-                          <div class="price-detail"><h3>Satria F150</h3><strong>Rp100.000</strong></div>
-                        </div>
-                        <div class="price-column"><h4>Rapihin Full Body</h4>
-                          <div class="price-detail"><h3>GSX R150</h3><strong>Rp500.000</strong></div>
-                          <div class="price-detail"><h3>Satria F150</h3><strong>Rp500.000</strong></div>
-                        </div>
-                      </div></div>
-                    </div>
-                  </article>
-
-                  <article class="price-tab-panel" id="wiretuck-lainnya" role="tabpanel">
-                    <div class="price-brand-card">
-                      <div class="price-brand-head"><span>Brand</span><h3>2 Tak / Lainnya</h3></div>
-                      <div class="price-columns-wrap"><div class="price-columns">
-                        <div class="price-column"><h4>Wiretuck Mesin</h4>
-                          <div class="price-detail"><h3>RX King / RX-Z</h3><strong>Rp180.000</strong></div>
-                          <div class="price-detail"><h3>F1ZR / FizR / Force 1</h3><strong>Rp150.000</strong></div>
-                          <div class="price-detail"><h3>Satria 120R</h3><strong>Rp180.000</strong></div>
-                          <div class="price-detail"><h3>RGR150</h3><strong>Rp200.000</strong></div>
-                          <div class="price-detail"><h3>Motor custom / restorasi</h3><strong>Hubungi Admin</strong></div>
-                        </div>
-                        <div class="price-column"><h4>Rapihin Full Body</h4>
-                          <div class="price-detail"><h3>RX King / RX-Z</h3><strong>Rp450.000</strong></div>
-                          <div class="price-detail"><h3>F1ZR / FizR / Force 1</h3><strong>Rp400.000</strong></div>
-                          <div class="price-detail"><h3>Satria 120R</h3><strong>Rp400.000</strong></div>
-                          <div class="price-detail"><h3>RGR150</h3><strong>Rp700.000</strong></div>
-                          <div class="price-detail"><h3>Motor custom / restorasi</h3><strong>Hubungi Admin</strong></div>
-                        </div>
-                      </div></div>
-                    </div>
-                  </article>
+                  <div class="wiretuck-tabs wiretuck-brand-tabs" role="tablist" aria-label="Brand motor wiretuck" data-wire-brand-list></div>
+                  <div class="wiretuck-tabs wiretuck-type-tabs" role="tablist" aria-label="Type motor wiretuck" data-wire-type-list hidden></div>
+                  <div class="wiretuck-price-output" data-wire-price-output hidden></div>
                 </div>
               </div>
             </div>
           </article>
-
           <article class="price-accordion-item">
             <button class="price-accordion-trigger" type="button" aria-expanded="false">
               <span>Perbaikan Kelistrikan</span>
@@ -502,7 +356,7 @@
             </div></div>
           </article>
         </div>
-        <p class="price-disclaimer">Harga dapat berubah sesuai kondisi motor dan tingkat pengerjaan.</p>
+        <p class="price-disclaimer">Harga dapat berubah sesuai kondisi motor, tingkat kesulitan jalur kabel, serta request custom dari customer.</p>
       </div>
     </section>
 
@@ -552,12 +406,11 @@
         </div>
 
         <div class="area-grid">
-          <span>Bandung Kota</span>
-          <span>Kabupaten Bandung</span>
+          <span>Bandung selatan</span>
+          <span>Bandung</span>
           <span>Cimahi</span>
           <span>Soreang</span>
           <span>Baleendah</span>
-          <span>Dayeuhkolot</span>
           <span>Area lain bisa konsultasi admin</span>
         </div>
 
@@ -631,10 +484,6 @@
         <p class="footer-copy">&copy; 2026 Clean Wire Garage. All rights reserved.</p>
       </div>
     </footer>
-
-    <a class="whatsapp-float" href="https://wa.me/6287725316510" target="_blank" rel="noopener" aria-label="Chat WhatsApp Clean Wire Garage">
-      <i class="lni lni-whatsapp"></i>
-    </a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="/js/script.js"></script>

@@ -51,6 +51,10 @@ img {
     justify-content: center;
 }
 
+.mobile-navbar-actions {
+    display: none;
+}
+
 .lni-align-text-right {
     font-size: 1.5rem;
 }
@@ -78,8 +82,7 @@ img {
     font-size: 1.5rem;
 }
 
-.drawer-label,
-.drawer-action {
+.drawer-label {
     display: none;
 }
 
@@ -109,6 +112,33 @@ img {
 @media (max-width: 991.98px) {
     .navbar .container {
         min-height: 70px;
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar img {
+        flex: 0 0 auto;
+    }
+
+    .mobile-navbar-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.55rem;
+        margin-left: auto;
+        margin-right: 0.55rem;
+    }
+
+    .mobile-book {
+        min-height: 38px;
+        padding: 0.55rem 0.78rem;
+        font-size: 0.68rem;
+        letter-spacing: 0.7px;
+        line-height: 1;
+        white-space: nowrap;
+    }
+
+    .desktop-book {
+        display: none !important;
     }
 
     .navbar-toggler {
@@ -223,18 +253,6 @@ img {
         color: #FFD600 !important;
     }
 
-    .drawer-action {
-        display: block;
-        margin-top: auto;
-        padding-top: 1.5rem;
-    }
-
-    .drawer-action .btn-book {
-        width: 100%;
-        min-height: 52px;
-        justify-content: center;
-        border-radius: 8px;
-    }
 }
 
 /* Hero Section */
@@ -286,8 +304,11 @@ img {
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-bottom: 3rem;
+    justify-content: center;
+    margin: 0 auto 3rem;
     flex-wrap: wrap;
+    width: fit-content;
+    min-width: min(100%, 360px);
 }
 
 .btn-book {
@@ -329,40 +350,44 @@ img {
 .hero-stats {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.85rem;
+    justify-content: center;
+    margin-inline: auto;
+    width: fit-content;
+    min-width: min(100%, 360px);
 }
 
 .hero-stat {
     display: flex;
     align-items: center;
     flex-direction: row;
-    gap: 0.65rem;
+    gap: 0.8rem;
 }
 
 .stat-icon {
-    width: 34px;
-    height: 34px;
+    width: 39px;
+    height: 39px;
     object-fit: contain;
     flex: 0 0 auto;
 }
 
 .stat-num {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: 800;
     color: #fff;
     line-height: 1;
 }
 
 .stat-label {
-    font-size: 0.7rem;
+    font-size: 0.78rem;
     color: #888;
     letter-spacing: 1.5px;
-    margin-top: 4px;
+    margin-top: 5px;
 }
 
 .hero-divider {
     width: 1px;
-    height: 40px;
+    height: 48px;
     background: #333;
 }
 
@@ -612,7 +637,7 @@ img {
 .price-note {
     border: 1px solid #1f1f1f;
     background: rgba(255, 255, 255, 0.04);
-    border-radius: 8px;
+    border-radius: 14px;
     color: #d8d8d8;
     padding: 1rem;
     display: flex;
@@ -776,7 +801,7 @@ img {
 
 .price-accordion-item {
     border: 1px solid rgba(255, 214, 0, 0.18);
-    border-radius: 8px;
+    border-radius: 14px;
     background: #090909;
     overflow: hidden;
     box-shadow: 0 16px 42px rgba(0, 0, 0, 0.28);
@@ -838,119 +863,215 @@ img {
     padding: 1.15rem 1.25rem 1.35rem;
 }
 
-.price-tabs {
+.wiretuck-picker {
+    display: grid;
+    gap: 0.55rem;
+}
+
+.wiretuck-step {
     display: flex;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
-    overflow-x: auto;
-    padding-bottom: 0.4rem;
-    scrollbar-color: #FFD600 #070707;
-    scrollbar-width: thin;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.55rem;
+    color: #fff;
 }
 
-.price-tab {
+.wiretuck-step > div {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.wiretuck-step p {
+    color: #d8d8d8;
+    font-size: 0.85rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+.wiretuck-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+}
+
+.wiretuck-tabs[hidden],
+.wiretuck-price-output[hidden] {
+    display: none;
+}
+
+.wiretuck-back {
+    width: 34px;
+    height: 34px;
     border: 1px solid rgba(255, 214, 0, 0.22);
-    border-radius: 8px;
+    border-radius: 999px;
     background: #090909;
-    color: #f5f5f5;
+    color: #FFD600;
     cursor: pointer;
-    flex: 0 0 auto;
-    font: inherit;
-    font-size: 0.9rem;
-    font-weight: 900;
-    letter-spacing: 0.4px;
-    min-height: 46px;
-    padding: 0.75rem 1.1rem;
-    transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
 
-.price-tab:hover,
-.price-tab:focus {
+.wiretuck-back:hover,
+.wiretuck-back:focus {
     border-color: #FFD600;
+    background: rgba(255, 214, 0, 0.08);
+    outline: none;
+    transform: translateX(-2px);
+}
+
+.wiretuck-back span {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.wiretuck-back[hidden] {
+    display: none;
+}
+
+.wiretuck-tab {
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #8f8f8f;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.84rem;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+    min-height: 30px;
+    padding: 0.18rem 0;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.wiretuck-tab:hover,
+.wiretuck-tab:focus {
     color: #FFD600;
     outline: none;
 }
 
-.price-tab.is-active {
-    border-color: #FFD600;
+.wiretuck-tab.is-active {
+    color: #FFD600;
+    font-weight: 900;
+}
+
+.wiretuck-tab.is-active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.1rem;
+    height: 2px;
     background: #FFD600;
-    color: #050505;
+    border-radius: 999px;
 }
 
-.price-tab-panel {
-    display: none;
+.wiretuck-type-tabs {
+    animation: wiretuckFade 0.18s ease;
+    margin: 0 0 0.85rem;
 }
 
-.price-tab-panel.is-active {
-    display: block;
-}
-
-.price-brand-card {
+.wiretuck-price-columns {
     border: 1px solid rgba(255, 214, 0, 0.18);
-    border-radius: 8px;
+    border-radius: 14px;
     background: #090909;
-    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.28);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     overflow: hidden;
 }
 
-.price-brand-head {
-    border-bottom: 1px solid rgba(255, 214, 0, 0.18);
-    background: linear-gradient(180deg, rgba(255, 214, 0, 0.1), rgba(255, 255, 255, 0.02));
-    padding: 1.2rem 1.4rem;
+.wiretuck-price-output {
+    animation: wiretuckFade 0.18s ease;
 }
 
-.price-brand-head span {
-    color: #FFD600;
-    display: block;
-    font-size: 0.72rem;
-    font-weight: 900;
-    letter-spacing: 1.8px;
-    margin-bottom: 0.35rem;
-    text-transform: uppercase;
+@keyframes wiretuckFade {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.price-brand-head h3 {
-    color: #fff;
-    font-size: 1.35rem;
-    font-weight: 900;
-    margin: 0;
+.wiretuck-price-card {
+    padding: 1.15rem 1.25rem;
 }
 
-.price-columns-wrap {
-    overflow-x: auto;
-    scrollbar-color: #FFD600 #070707;
-    scrollbar-width: thin;
-}
-
-.price-columns {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(320px, 1fr));
-    min-width: 640px;
-}
-
-.price-column {
-    padding: 1.15rem 1.25rem 1.35rem;
-}
-
-.price-column + .price-column {
+.wiretuck-price-card + .wiretuck-price-card {
     border-left: 1px solid rgba(255, 214, 0, 0.14);
 }
 
-.price-column h4 {
+.wiretuck-price-card h3 {
     color: #FFD600;
-    font-size: 0.95rem;
+    font-size: 0.88rem;
     font-weight: 900;
     letter-spacing: 0.8px;
-    margin: 0 0 0.75rem;
+    margin: 0 0 0.7rem;
     text-transform: uppercase;
+}
+
+.wiretuck-price-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.75rem;
+    padding: 0.85rem 0;
+}
+
+.wiretuck-price-item + .wiretuck-price-item {
+    border-top: 1px solid rgba(255, 214, 0, 0.12);
+}
+
+.wiretuck-price-item span {
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 800;
+    line-height: 1.35;
+}
+
+.wiretuck-price-item strong {
+    color: #FFD600;
+    font-size: 0.92rem;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+.wiretuck-admin-link {
+    border: 1px solid rgba(255, 214, 0, 0.38);
+    border-radius: 14px;
+    background: rgba(255, 214, 0, 0.08);
+    color: #FFD600;
+    display: inline-flex;
+    font-size: 0.82rem;
+    font-weight: 900;
+    justify-content: center;
+    margin-top: 0.8rem;
+    padding: 0.7rem 0.95rem;
+    text-decoration: none;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.wiretuck-admin-link:hover,
+.wiretuck-admin-link:focus {
+    border-color: #FFD600;
+    background: #FFD600;
+    color: #050505;
+    outline: none;
 }
 
 .price-detail {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    gap: 1rem;
+    grid-template-columns: minmax(0, 1fr) minmax(132px, 168px);
+    column-gap: 1.6rem;
+    row-gap: 0.45rem;
     align-items: start;
-    padding: 1.1rem 0;
+    padding: 1.25rem 0;
 }
 
 .price-detail + .price-detail {
@@ -959,24 +1080,30 @@ img {
 
 .price-detail h3 {
     color: #fff;
-    font-size: 1rem;
-    font-weight: 800;
+    font-size: 0.94rem;
+    font-weight: 700;
+    line-height: 1.35;
     margin: 0;
 }
 
 .price-detail p {
     color: #b8b8b8;
     grid-column: 1;
-    line-height: 1.7;
+    font-size: 0.82rem;
+    line-height: 1.75;
     margin: 0;
+    max-width: 760px;
 }
 
 .price-detail strong {
     color: #FFD600;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 900;
     grid-column: 2;
     grid-row: 1 / span 2;
+    justify-self: end;
+    line-height: 1.35;
+    text-align: right;
     white-space: nowrap;
 }
 
@@ -1401,38 +1528,6 @@ img {
     font-size: 0.85rem;
 }
 
-/* Floating WhatsApp CTA */
-.whatsapp-float {
-    position: fixed;
-    right: 1.25rem;
-    bottom: 1.25rem;
-    width: 58px;
-    height: 58px;
-    border: 1px solid rgba(255, 214, 0, 0.42);
-    border-radius: 999px;
-    background: #FFD600;
-    color: #050505;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    z-index: 1100;
-    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.42), 0 10px 24px rgba(255, 214, 0, 0.18);
-    transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
-}
-
-.whatsapp-float:hover {
-    background: #ffe24a;
-    color: #050505;
-    transform: translateY(-4px);
-    box-shadow: 0 22px 46px rgba(0, 0, 0, 0.48), 0 14px 30px rgba(255, 214, 0, 0.24);
-}
-
-.whatsapp-float i {
-    font-size: 1.8rem;
-    line-height: 1;
-}
-
 @media (max-width: 991.98px) {
     #hero-sticky {
         height: auto;
@@ -1710,6 +1805,10 @@ body {
     box-shadow: 0 16px 42px rgba(0, 0, 0, 0.28);
 }
 
+.price-note {
+    border-radius: 14px;
+}
+
 .about-card,
 .price-card,
 .service-card,
@@ -1862,17 +1961,40 @@ body {
     }
 
     .hero-buttons {
+        justify-content: center;
         margin-bottom: 2rem;
+        min-width: min(100%, 320px);
     }
 
     .hero-stats {
-        align-items: flex-start;
-        flex-wrap: wrap;
+        align-items: center;
+        flex-wrap: nowrap;
         gap: 1rem;
+        justify-content: center;
+        min-width: min(100%, 320px);
+    }
+
+    .hero-stat {
+        gap: 0.7rem;
+    }
+
+    .stat-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .stat-num {
+        font-size: 1.45rem;
+    }
+
+    .stat-label {
+        font-size: 0.68rem;
+        margin-top: 4px;
     }
 
     .hero-divider {
-        display: none;
+        display: block;
+        height: 38px;
     }
 
     .price-accordion {
@@ -1889,38 +2011,42 @@ body {
         padding: 0.85rem;
     }
 
-    .price-tabs {
+    .wiretuck-picker {
+        gap: 0.45rem;
+    }
+
+    .wiretuck-tabs {
         align-items: center;
         flex-wrap: wrap;
         gap: 0.45rem 0.85rem;
-        margin-bottom: 0.85rem;
-        overflow-x: visible;
-        padding-bottom: 0;
+        margin-bottom: 0;
     }
 
-    .price-tab {
+    .wiretuck-tab {
         border: 0;
         border-radius: 0;
         background: transparent;
         color: #8f8f8f;
         font-size: 0.74rem;
+        font-weight: 800;
         letter-spacing: 0.2px;
         min-height: 28px;
         padding: 0.15rem 0;
         position: relative;
     }
 
-    .price-tab:hover,
-    .price-tab:focus {
+    .wiretuck-tab:hover,
+    .wiretuck-tab:focus {
         color: #FFD600;
     }
 
-    .price-tab.is-active {
+    .wiretuck-tab.is-active {
         background: transparent;
         color: #FFD600;
+        font-weight: 900;
     }
 
-    .price-tab.is-active::after {
+    .wiretuck-tab.is-active::after {
         content: "";
         position: absolute;
         left: 0;
@@ -1931,40 +2057,41 @@ body {
         border-radius: 999px;
     }
 
-    .price-brand-head {
-        padding: 0.9rem 1rem;
+    .wiretuck-type-tabs {
+        margin: 0 0 0.75rem;
     }
 
-    .price-brand-head h3 {
-        font-size: 1.05rem;
+    .wiretuck-back {
+        width: 30px;
+        height: 30px;
     }
 
-    .price-columns {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        min-width: 0;
+    .wiretuck-back span {
+        font-size: 0.92rem;
     }
 
-    .price-columns-wrap {
-        overflow-x: visible;
+    .wiretuck-price-columns {
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
     }
 
-    .price-column {
+    .wiretuck-price-card {
         padding: 0.7rem;
     }
 
-    .price-column h4 {
+    .wiretuck-price-card h3 {
         font-size: 0.74rem;
         line-height: 1.25;
         margin-bottom: 0.45rem;
     }
 
-    .price-detail {
+    .wiretuck-price-item {
         display: block;
         gap: 0;
         padding: 0.5rem 0;
     }
 
-    .price-detail h3 {
+    .wiretuck-price-item span {
         display: -webkit-box;
         font-size: 0.72rem;
         line-height: 1.25;
@@ -1974,12 +2101,45 @@ body {
         -webkit-line-clamp: 2;
     }
 
-    .price-detail strong {
+    .wiretuck-price-item strong {
         display: block;
         font-size: 0.7rem;
         line-height: 1.2;
         margin-top: 0.18rem;
         white-space: normal;
+    }
+
+    .wiretuck-admin-link {
+        display: flex;
+        font-size: 0.72rem;
+        line-height: 1.35;
+        margin-top: 0.65rem;
+        padding: 0.6rem 0.7rem;
+        text-align: center;
+    }
+
+    .price-detail {
+        grid-template-columns: minmax(0, 1fr) minmax(86px, 108px);
+        column-gap: 0.8rem;
+        row-gap: 0.38rem;
+        padding: 1rem 0;
+    }
+
+    .price-detail h3 {
+        font-size: 0.82rem;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+    .price-detail p {
+        font-size: 0.72rem;
+        line-height: 1.65;
+    }
+
+    .price-detail strong {
+        font-size: 0.74rem;
+        line-height: 1.35;
+        white-space: nowrap;
     }
 
 }
