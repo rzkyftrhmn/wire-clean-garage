@@ -20,24 +20,44 @@ if (mobileNav && window.bootstrap) {
     });
 }
 
+const priceTabs = document.querySelectorAll('.price-tab');
+
+priceTabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+        const targetId = tab.getAttribute('aria-controls');
+        const tabScope = tab.closest('.price-accordion-content') ?? document;
+        const relatedTabs = tabScope.querySelectorAll('.price-tab');
+        const relatedPanels = tabScope.querySelectorAll('.price-tab-panel');
+
+        relatedTabs.forEach((item) => {
+            item.classList.toggle('is-active', item === tab);
+            item.setAttribute('aria-selected', String(item === tab));
+        });
+
+        relatedPanels.forEach((panel) => {
+            panel.classList.toggle('is-active', panel.id === targetId);
+        });
+    });
+});
+
 const priceAccordionItems = document.querySelectorAll('.price-accordion-item');
+
+function resetPriceTabs(scope) {
+    scope.querySelectorAll('.price-tab').forEach((tab) => {
+        tab.classList.remove('is-active');
+        tab.setAttribute('aria-selected', 'false');
+    });
+
+    scope.querySelectorAll('.price-tab-panel').forEach((panel) => {
+        panel.classList.remove('is-active');
+    });
+}
 
 function closePriceItem(item) {
     item.classList.remove('is-open');
     item.querySelector(':scope > .price-accordion-trigger')
         ?.setAttribute('aria-expanded', 'false');
-}
-
-function closePriceSiblings(item) {
-    const accordion = item.parentElement;
-
-    if (!accordion?.classList.contains('price-accordion')) return;
-
-    accordion.querySelectorAll(':scope > .price-accordion-item').forEach((sibling) => {
-        if (sibling !== item) {
-            closePriceItem(sibling);
-        }
-    });
+    resetPriceTabs(item);
 }
 
 priceAccordionItems.forEach((item) => {
@@ -48,11 +68,19 @@ priceAccordionItems.forEach((item) => {
     trigger.addEventListener('click', () => {
         const isOpen = item.classList.contains('is-open');
 
-        if (!isOpen) {
-            closePriceSiblings(item);
-        }
+        item.parentElement
+            ?.querySelectorAll(':scope > .price-accordion-item')
+            .forEach((sibling) => {
+                if (sibling !== item) {
+                    closePriceItem(sibling);
+                }
+            });
 
         item.classList.toggle('is-open', !isOpen);
         trigger.setAttribute('aria-expanded', String(!isOpen));
+
+        if (isOpen) {
+            resetPriceTabs(item);
+        }
     });
 });

@@ -775,54 +775,40 @@ img {
 }
 
 .price-accordion-item {
-    border: 1px solid rgba(255, 214, 0, 0.15);
-    border-radius: 28px;
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 214, 0, 0.18);
+    border-radius: 8px;
+    background: #090909;
     overflow: hidden;
-    transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.28);
 }
 
 .price-accordion-item.is-open {
     border-color: #FFD600;
-    box-shadow: 0 18px 42px rgba(255, 214, 0, 0.12);
 }
 
 .price-accordion-trigger {
     width: 100%;
-    min-height: 78px;
+    min-height: 70px;
     border: 0;
     background: transparent;
     color: #fff;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    padding: 1.25rem 1.4rem;
-    text-align: left;
     font: inherit;
     font-size: 1.05rem;
-    font-weight: 800;
-    cursor: pointer;
-    transition: background 0.25s ease, color 0.25s ease;
+    font-weight: 900;
+    padding: 1.15rem 1.25rem;
+    text-align: left;
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
 .price-accordion-trigger:hover,
-.price-accordion-item.is-open .price-accordion-trigger {
-    background: rgba(255, 255, 255, 0.02);
-}
-
-.price-accordion-trigger span {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.price-accordion-trigger small {
+.price-accordion-item.is-open > .price-accordion-trigger {
+    background: rgba(255, 214, 0, 0.08);
     color: #FFD600;
-    font-size: 0.72rem;
-    font-weight: 900;
-    letter-spacing: 1.4px;
 }
 
 .price-chevron {
@@ -832,7 +818,7 @@ img {
     border-bottom: 2px solid #FFD600;
     flex: 0 0 auto;
     transform: rotate(45deg);
-    transition: transform 0.28s ease;
+    transition: transform 0.2s ease;
 }
 
 .price-accordion-item.is-open > .price-accordion-trigger .price-chevron {
@@ -840,41 +826,123 @@ img {
 }
 
 .price-accordion-panel {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.34s ease;
+    display: none;
 }
 
 .price-accordion-item.is-open > .price-accordion-panel {
-    max-height: 800px;
-    overflow-y: auto;
-    overscroll-behavior: auto;
-    -webkit-overflow-scrolling: touch;
+    display: block;
 }
 
-.price-accordion-panel::-webkit-scrollbar {
-    width: 6px;
+.price-accordion-content {
+    border-top: 1px solid rgba(255, 214, 0, 0.16);
+    padding: 1.15rem 1.25rem 1.35rem;
 }
 
-.price-accordion-panel::-webkit-scrollbar-track {
-    background: #070707;
-}
-
-.price-accordion-panel::-webkit-scrollbar-thumb {
-    background: #FFD600;
-    border-radius: 999px;
-}
-
-.price-accordion-panel {
+.price-tabs {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    overflow-x: auto;
+    padding-bottom: 0.4rem;
     scrollbar-color: #FFD600 #070707;
     scrollbar-width: thin;
 }
 
-.price-accordion-content {
-    border-top: 1px solid rgba(255, 214, 0, 0.2);
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(8px);
-    padding: 0.25rem 1.4rem 2rem;
+.price-tab {
+    border: 1px solid rgba(255, 214, 0, 0.22);
+    border-radius: 8px;
+    background: #090909;
+    color: #f5f5f5;
+    cursor: pointer;
+    flex: 0 0 auto;
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 900;
+    letter-spacing: 0.4px;
+    min-height: 46px;
+    padding: 0.75rem 1.1rem;
+    transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.price-tab:hover,
+.price-tab:focus {
+    border-color: #FFD600;
+    color: #FFD600;
+    outline: none;
+}
+
+.price-tab.is-active {
+    border-color: #FFD600;
+    background: #FFD600;
+    color: #050505;
+}
+
+.price-tab-panel {
+    display: none;
+}
+
+.price-tab-panel.is-active {
+    display: block;
+}
+
+.price-brand-card {
+    border: 1px solid rgba(255, 214, 0, 0.18);
+    border-radius: 8px;
+    background: #090909;
+    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.28);
+    overflow: hidden;
+}
+
+.price-brand-head {
+    border-bottom: 1px solid rgba(255, 214, 0, 0.18);
+    background: linear-gradient(180deg, rgba(255, 214, 0, 0.1), rgba(255, 255, 255, 0.02));
+    padding: 1.2rem 1.4rem;
+}
+
+.price-brand-head span {
+    color: #FFD600;
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 1.8px;
+    margin-bottom: 0.35rem;
+    text-transform: uppercase;
+}
+
+.price-brand-head h3 {
+    color: #fff;
+    font-size: 1.35rem;
+    font-weight: 900;
+    margin: 0;
+}
+
+.price-columns-wrap {
+    overflow-x: auto;
+    scrollbar-color: #FFD600 #070707;
+    scrollbar-width: thin;
+}
+
+.price-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(320px, 1fr));
+    min-width: 640px;
+}
+
+.price-column {
+    padding: 1.15rem 1.25rem 1.35rem;
+}
+
+.price-column + .price-column {
+    border-left: 1px solid rgba(255, 214, 0, 0.14);
+}
+
+.price-column h4 {
+    color: #FFD600;
+    font-size: 0.95rem;
+    font-weight: 900;
+    letter-spacing: 0.8px;
+    margin: 0 0 0.75rem;
+    text-transform: uppercase;
 }
 
 .price-detail {
@@ -910,33 +978,6 @@ img {
     grid-column: 2;
     grid-row: 1 / span 2;
     white-space: nowrap;
-}
-
-.price-accordion-nested {
-    gap: 0.75rem;
-}
-
-.price-accordion-nested .price-accordion-item {
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(8px);
-}
-
-.price-accordion-nested .price-accordion-trigger {
-    min-height: 64px;
-    padding: 1rem;
-    font-size: 0.98rem;
-}
-
-.price-accordion-type .price-accordion-trigger {
-    min-height: 58px;
-}
-
-.price-accordion-item.is-open > .price-accordion-panel {
-    border-radius: 0 0 28px 28px;
-}
-
-.price-accordion-content {
-    border-top-color: rgba(255, 214, 0, 0.12);
 }
 
 .price-disclaimer {
@@ -1232,7 +1273,6 @@ img {
     border: 1px solid rgba(255, 214, 0, 0.18);
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.025);
-    backdrop-filter: blur(8px);
 }
 
 .area-grid span {
@@ -1448,9 +1488,6 @@ img {
         grid-template-columns: 1fr;
     }
 
-    .price-accordion-item.is-open > .price-accordion-panel {
-        max-height: 600px;
-    }
 }
 
 @media (max-width: 575.98px) {
@@ -1519,7 +1556,6 @@ body {
 .navbar {
     min-height: 76px;
     background: rgba(0, 0, 0, 0.18);
-    backdrop-filter: blur(10px);
 }
 
 .navbar.scrolled {
@@ -1790,53 +1826,6 @@ body {
     padding: 1.35rem 1.5rem;
 }
 
-.price-accordion-item {
-    border-color: rgba(255, 214, 0, 0.15);
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(8px);
-}
-
-.price-accordion-trigger {
-    background: transparent;
-}
-
-.price-accordion-item.is-open {
-    border-color: var(--cwg-yellow);
-    box-shadow: 0 18px 42px rgba(255, 214, 0, 0.12);
-}
-
-.price-accordion-trigger:hover,
-.price-accordion-item.is-open .price-accordion-trigger {
-    background: rgba(255, 255, 255, 0.02);
-}
-
-.price-accordion-item:hover {
-    border-color: var(--cwg-yellow);
-    background: rgba(255, 255, 255, 0.02);
-    box-shadow: 0 16px 34px rgba(255, 214, 0, 0.1);
-}
-
-.price-accordion-item.is-open,
-.price-accordion-nested .price-accordion-item,
-.price-accordion-type .price-accordion-item {
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(8px);
-}
-
-.price-accordion-content,
-.price-accordion-panel {
-    background: transparent;
-}
-
-.price-accordion-item.is-open > .price-accordion-panel > .price-accordion-content {
-    border: 1px solid rgba(255, 214, 0, 0.2);
-    border-top: 1px solid rgba(255, 214, 0, 0.2);
-    border-inline: 0;
-    border-bottom: 0;
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(8px);
-}
-
 @media (max-width: 991.98px) {
     .nav-link::after {
         display: none;
@@ -1886,34 +1875,113 @@ body {
         display: none;
     }
 
-    .price-accordion-trigger {
-        min-height: 68px;
-        padding: 1rem;
-        font-size: 0.98rem;
-    }
-
-    .price-accordion-trigger span {
+    .price-accordion {
         gap: 0.75rem;
     }
 
+    .price-accordion-trigger {
+        min-height: 58px;
+        padding: 0.9rem 1rem;
+        font-size: 0.95rem;
+    }
+
     .price-accordion-content {
-        padding: 0.15rem 1rem 2rem;
+        padding: 0.85rem;
+    }
+
+    .price-tabs {
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.45rem 0.85rem;
+        margin-bottom: 0.85rem;
+        overflow-x: visible;
+        padding-bottom: 0;
+    }
+
+    .price-tab {
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        color: #8f8f8f;
+        font-size: 0.74rem;
+        letter-spacing: 0.2px;
+        min-height: 28px;
+        padding: 0.15rem 0;
+        position: relative;
+    }
+
+    .price-tab:hover,
+    .price-tab:focus {
+        color: #FFD600;
+    }
+
+    .price-tab.is-active {
+        background: transparent;
+        color: #FFD600;
+    }
+
+    .price-tab.is-active::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -0.1rem;
+        height: 2px;
+        background: #FFD600;
+        border-radius: 999px;
+    }
+
+    .price-brand-head {
+        padding: 0.9rem 1rem;
+    }
+
+    .price-brand-head h3 {
+        font-size: 1.05rem;
+    }
+
+    .price-columns {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        min-width: 0;
+    }
+
+    .price-columns-wrap {
+        overflow-x: visible;
+    }
+
+    .price-column {
+        padding: 0.7rem;
+    }
+
+    .price-column h4 {
+        font-size: 0.74rem;
+        line-height: 1.25;
+        margin-bottom: 0.45rem;
     }
 
     .price-detail {
-        grid-template-columns: 1fr;
-        gap: 0.45rem;
+        display: block;
+        gap: 0;
+        padding: 0.5rem 0;
     }
 
-    .price-detail p {
-        grid-column: 1;
+    .price-detail h3 {
+        display: -webkit-box;
+        font-size: 0.72rem;
+        line-height: 1.25;
+        overflow: hidden;
+        overflow-wrap: anywhere;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
     }
 
     .price-detail strong {
-        grid-column: 1;
-        grid-row: auto;
-        justify-self: start;
+        display: block;
+        font-size: 0.7rem;
+        line-height: 1.2;
+        margin-top: 0.18rem;
+        white-space: normal;
     }
+
 }
 
 /* Mobile Drawer Solid Override */
